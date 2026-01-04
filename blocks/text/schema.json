@@ -1,0 +1,27 @@
+{
+  "id": "text",
+  "name": "Text",
+  "version": "1.0.0",
+  "fields": [
+    {
+      "name": "title",
+      "type": "text",
+      "label": "Title",
+      "default": "",
+      "required": false,
+      "maxLength": 80,
+      "placeholder": "Section title (optional)"
+    },
+    {
+      "name": "content",
+      "type": "richtext",
+      "label": "Content",
+      "default": [],
+      "required": false,
+      "placeholder": "Write your paragraph(s)…"
+    }
+  ],
+  "a11y": { "landmark": "region", "label": "Text section" },
+  "engines": { "siteRuntime": ">=1.0.0" },
+  "budgets": { "cssKB": 4 }
+}

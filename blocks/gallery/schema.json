@@ -1,0 +1,122 @@
+{
+  "id": "gallery",
+  "name": "Gallery",
+  "version": "1.1.0",
+  "fields": [
+    {
+      "name": "title",
+      "type": "text",
+      "label": "Title",
+      "default": "",
+      "required": false,
+      "maxLength": 80,
+      "placeholder": "Section title (optional)"
+    },
+    {
+      "name": "layout",
+      "type": "select",
+      "label": "Layout",
+      "default": "grid",
+      "required": true,
+      "options": [
+        { "label": "Grid", "value": "grid" },
+        { "label": "Masonry", "value": "masonry" }
+      ]
+    },
+    {
+      "name": "aspectRatio",
+      "type": "select",
+      "label": "Aspect ratio",
+      "default": "auto",
+      "required": true,
+      "options": [
+        { "label": "Auto", "value": "auto" },
+        { "label": "Square (1:1)", "value": "1 / 1" },
+        { "label": "Landscape (4:3)", "value": "4 / 3" },
+        { "label": "Portrait (3:4)", "value": "3 / 4" },
+        { "label": "Widescreen (16:9)", "value": "16 / 9" }
+      ]
+    },
+    {
+      "name": "columnsMobile",
+      "type": "select",
+      "label": "Mobile columns",
+      "default": "1",
+      "required": true,
+      "options": [
+        { "label": "1", "value": "1" },
+        { "label": "2", "value": "2" }
+      ]
+    },
+    {
+      "name": "columnsDesktop",
+      "type": "select",
+      "label": "Desktop columns",
+      "default": "3",
+      "required": true,
+      "options": [
+        { "label": "2", "value": "2" },
+        { "label": "3", "value": "3" },
+        { "label": "4", "value": "4" },
+        { "label": "5", "value": "5" },
+        { "label": "6", "value": "6" }
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "select",
+      "label": "Gap",
+      "default": "16",
+      "required": true,
+      "options": [
+        { "label": "Small", "value": "12" },
+        { "label": "Medium", "value": "16" },
+        { "label": "Large", "value": "24" }
+      ]
+    },
+    {
+      "name": "closeOnOutsideClick",
+      "type": "boolean",
+      "label": "Close on outside click",
+      "default": true,
+      "required": false
+    },
+    {
+      "name": "lightbox",
+      "type": "boolean",
+      "label": "Enable lightbox",
+      "default": true,
+      "required": false
+    },
+    {
+      "name": "images",
+      "label": "Images",
+      "type": "array",
+      "fields": [
+        {
+          "name": "src",
+          "type": "text",
+          "label": "Image URL",
+          "required": true
+        },
+        {
+          "name": "alt",
+          "type": "text",
+          "label": "Alt text",
+          "required": true,
+          "maxLength": 140
+        },
+        {
+          "name": "caption",
+          "type": "text",
+          "label": "Caption",
+          "required": false,
+          "maxLength": 140
+        }
+      ]
+    }
+  ],
+  "a11y": { "landmark": "region", "label": "Gallery section" },
+  "engines": { "siteRuntime": ">=1.0.0" },
+  "budgets": { "cssKB": 6 }
+}

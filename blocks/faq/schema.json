@@ -1,0 +1,38 @@
+{
+  "id": "faq",
+  "name": "FAQs",
+  "version": "1.0.0",
+  "fields": [
+    {
+      "name": "title",
+      "type": "text",
+      "label": "Title",
+      "default": "",
+      "required": false,
+      "maxLength": 80,
+      "placeholder": "Section title (optional)"
+    },
+    {
+      "name": "faqs",
+      "label": "Faqs",
+      "type": "array",
+      "fields": [
+        {
+          "name": "question",
+          "type": "text",
+          "label": "Question",
+          "required": true
+        },
+        {
+          "name": "answer",
+          "type": "textarea",
+          "label": "Answer",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "a11y": { "landmark": "region", "label": "Text section" },
+  "engines": { "siteRuntime": ">=1.0.0" },
+  "budgets": { "cssKB": 4 }
+}

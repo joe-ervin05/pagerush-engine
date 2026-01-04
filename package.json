@@ -3,13 +3,27 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run compile/compile.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/static": "^1.4.7",
+    "cssnano": "^7.1.2",
+    "elysia": "latest",
+    "esbuild": "^0.27.0",
+    "liquidjs": "^10.24.0",
+    "lucide-static": "^0.562.0"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "autoprefixer": "^10.4.23",
+    "bun-types": "latest",
+    "postcss": "^8.5.6",
+    "tailwindcss": "3.4.19",
+    "@types/bun": "latest"
   },
-  "module": "src/index.js"
+  "module": "src/index.js",
+  "type": "module",
+  "private": true,
+  "peerDependencies": {
+    "typescript": "^5"
+  }
 }

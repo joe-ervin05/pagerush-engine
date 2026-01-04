@@ -1,0 +1,92 @@
+{
+  "id": "reviews",
+  "name": "Reviews",
+  "version": "1.0.0",
+  "fields": [
+    {
+      "name": "title",
+      "type": "text",
+      "label": "Title",
+      "default": "Reviews",
+      "required": false,
+      "maxLength": 80
+    },
+    {
+      "name": "subtitle",
+      "type": "textarea",
+      "label": "Subtitle",
+      "default": "",
+      "required": false,
+      "maxLength": 180
+    },
+    {
+      "name": "columnsDesktop",
+      "type": "select",
+      "label": "Desktop columns",
+      "default": "3",
+      "required": true,
+      "options": [
+        { "label": "2", "value": "2" },
+        { "label": "3", "value": "3" }
+      ]
+    },
+    {
+      "name": "showStars",
+      "type": "boolean",
+      "label": "Show star rating",
+      "default": true,
+      "required": false
+    },
+    {
+      "name": "reviews",
+      "label": "Reviews",
+      "type": "array",
+      "fields": [
+        {
+          "name": "quote",
+          "type": "textarea",
+          "label": "Quote",
+          "required": true,
+          "maxLength": 420
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "label": "Name",
+          "required": true,
+          "maxLength": 80
+        },
+        {
+          "name": "role",
+          "type": "text",
+          "label": "Role / context (optional)",
+          "required": false,
+          "maxLength": 120
+        },
+        {
+          "name": "rating",
+          "type": "select",
+          "label": "Rating",
+          "required": false,
+          "default": "5",
+          "options": [
+            { "label": "5", "value": "5" },
+            { "label": "4", "value": "4" },
+            { "label": "3", "value": "3" },
+            { "label": "2", "value": "2" },
+            { "label": "1", "value": "1" }
+          ]
+        },
+        {
+          "name": "avatar",
+          "type": "text",
+          "label": "Avatar image URL (optional)",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "a11y": { "landmark": "region", "label": "Reviews section" },
+  "engines": { "siteRuntime": ">=1.0.0" },
+  "budgets": { "cssKB": 6 }
+}

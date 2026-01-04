@@ -1,0 +1,45 @@
+<div class="container mx-auto py-12" data-stats-root>
+  {{#if fields.title}}
+    <div class="w-full">
+      <h2 class="text-3xl font-semibold">{{fields.title}}</h2>
+    </div>
+  {{/if}}
+
+  {{#if fields.subtitle}}
+    <p class="mt-3 text-lg leading-6 text-muted-text max-w-3xl">
+      {{fields.subtitle}}
+    </p>
+  {{/if}}
+
+  <div
+    class="mt-8"
+    data-stats-grid
+    style="
+      display: grid;
+      grid-template-columns: repeat({{fields.columnsMobile}}, minmax(0, 1fr));
+      gap: {{fields.gap}}px;
+      align-items: stretch;
+    "
+  >
+    {{#each fields.stats}}
+      <div
+        class="rounded-lg border border-border bg-surface p-6"
+        data-stat-card
+      >
+        <div class="text-4xl font-bold" data-stat-value data-raw="{{value}}">
+          {{value}}
+        </div>
+
+        <div class="text-lg md:text-xl font-medium">
+          {{label}}
+        </div>
+
+        {{#if description}}
+          <p class="text-base md:text-lg text-muted-text whitespace-pre-line">
+            {{description}}
+          </p>
+        {{/if}}
+      </div>
+    {{/each}}
+  </div>
+</div>

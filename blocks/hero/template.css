@@ -1,0 +1,129 @@
+/* Default shell styling (non-full width) */
+[data-hero-shell] {
+  border-radius: var(--rounded-lg);
+}
+
+/* Full width: edge-to-edge, no rounding, no border, no padding wrapper */
+[data-hero-root][data-hero-full="true"] {
+  padding: 0;
+  max-width: none;
+}
+
+[data-hero-root][data-hero-full="true"] [data-hero-shell] {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+}
+
+/* Overlay uses mobile vars by default */
+[data-hero-shell] [data-hero-overlay] {
+  background: var(--hero-overlay-color-mobile, #000);
+  opacity: var(--hero-overlay-opacity-mobile, 0.25);
+}
+
+/* Switch overlay vars on desktop */
+@media (min-width: 768px) {
+  [data-hero-shell] [data-hero-overlay] {
+    background: var(--hero-overlay-color-desktop, #000);
+    opacity: var(--hero-overlay-opacity-desktop, 0.25);
+  }
+}
+
+/* Size presets */
+[data-hero-root][data-hero-size="sm"] [data-hero-shell] {
+  min-height: 400px;
+}
+[data-hero-root][data-hero-size="md"] [data-hero-shell] {
+  min-height: 640px;
+}
+[data-hero-root][data-hero-size="lg"] [data-hero-shell] {
+  min-height: 800px;
+}
+
+[data-hero-root][data-hero-size="sm"] [data-hero-content] {
+  padding: 48px 0;
+}
+[data-hero-root][data-hero-size="md"] [data-hero-content] {
+  padding: 80px 0;
+}
+[data-hero-root][data-hero-size="lg"] [data-hero-content] {
+  padding: 120px 0;
+}
+
+/* Alignment presets */
+[data-hero-root][data-hero-align="center"] [data-hero-inner] {
+  text-align: center;
+}
+[data-hero-root][data-hero-align="center"] [data-hero-ctas] {
+  justify-content: center;
+}
+
+/* Full width: content padding still nice on mobile, but keep it edge-to-edge overall */
+[data-hero-root][data-hero-full="true"] [data-hero-inner] {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+/* Make content fill shell height and allow vertical alignment */
+[data-hero-content] {
+  display: grid;
+  min-height: inherit; /* works because shell has min-height */
+}
+
+/* Vertical alignment choices */
+[data-hero-root][data-hero-vertical="top"] [data-hero-content] {
+  align-content: start;
+}
+
+[data-hero-root][data-hero-vertical="center"] [data-hero-content] {
+  align-content: center;
+}
+
+[data-hero-root][data-hero-vertical="bottom"] [data-hero-content] {
+  align-content: end;
+}
+
+/* Default: left alignment means content hugs the left of the hero container */
+[data-hero-root][data-hero-align="left"] [data-hero-inner] {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Center alignment keeps it centered */
+[data-hero-root][data-hero-align="center"] [data-hero-inner] {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* CTA row alignment */
+[data-hero-root][data-hero-align="left"] [data-hero-ctas] {
+  justify-content: flex-start;
+}
+[data-hero-root][data-hero-align="center"] [data-hero-ctas] {
+  justify-content: center;
+}
+
+/* Left: content sits at the container’s left gutter */
+[data-hero-root][data-hero-align="left"] [data-hero-inner] {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Center: content centered within the container */
+[data-hero-root][data-hero-align="center"] [data-hero-inner] {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* CTA alignment */
+[data-hero-root][data-hero-align="left"] [data-hero-ctas] {
+  justify-content: flex-start;
+}
+[data-hero-root][data-hero-align="center"] [data-hero-ctas] {
+  justify-content: center;
+}

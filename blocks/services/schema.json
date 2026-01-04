@@ -1,0 +1,90 @@
+{
+  "id": "services",
+  "name": "Services",
+  "version": "1.0.0",
+  "fields": [
+    {
+      "name": "title",
+      "type": "text",
+      "label": "Title",
+      "default": "Services",
+      "required": false,
+      "maxLength": 80
+    },
+    {
+      "name": "subtitle",
+      "type": "textarea",
+      "label": "Subtitle",
+      "default": "",
+      "required": false,
+      "maxLength": 220
+    },
+    {
+      "name": "columnsDesktop",
+      "type": "select",
+      "label": "Desktop columns",
+      "default": "3",
+      "required": true,
+      "options": [
+        { "label": "2", "value": "2" },
+        { "label": "3", "value": "3" },
+        { "label": "4", "value": "4" }
+      ]
+    },
+    {
+      "name": "cardStyle",
+      "type": "select",
+      "label": "Card style",
+      "default": "boxed",
+      "required": true,
+      "options": [
+        { "label": "Boxed", "value": "boxed" },
+        { "label": "Minimal", "value": "minimal" }
+      ]
+    },
+    {
+      "name": "services",
+      "label": "Services",
+      "type": "array",
+      "fields": [
+        {
+          "name": "title",
+          "type": "text",
+          "label": "Service title",
+          "required": true,
+          "maxLength": 60
+        },
+        {
+          "name": "description",
+          "type": "textarea",
+          "label": "Description",
+          "required": false,
+          "maxLength": 260
+        },
+        {
+          "name": "icon",
+          "type": "icon",
+          "label": "Icon",
+          "required": false,
+          "default": "none"
+        },
+        {
+          "name": "ctaLabel",
+          "type": "text",
+          "label": "CTA label (optional)",
+          "required": false,
+          "maxLength": 30
+        },
+        {
+          "name": "ctaHref",
+          "type": "text",
+          "label": "CTA link (optional)",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "a11y": { "landmark": "region", "label": "Services section" },
+  "engines": { "siteRuntime": ">=1.0.0" },
+  "budgets": { "cssKB": 6 }
+}

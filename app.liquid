@@ -1,0 +1,13 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% for h in head %}
+      {{ h | raw }}
+    {% endfor %}
+  </head>
+  <body class="bg-background text-text">
+    {{ body | raw }}
+    <script src="/runtime.js?m={{ date }}"></script>
+  </body>
+</html>

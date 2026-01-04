@@ -1,0 +1,9 @@
+<div class="container mx-auto pt-12">
+  {% if fields.title %}
+    <h2 class="text-3xl font-semibold">{{ fields.title }}</h2>
+  {% endif %}
+
+  {% if fields.content %}
+    <p class="text-lg">{{ fields.content | raw }}</p>
+  {% endif %}
+</div>

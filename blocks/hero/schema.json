@@ -1,0 +1,177 @@
+{
+  "id": "hero",
+  "name": "Hero",
+  "version": "1.0.0",
+  "fields": [
+    {
+      "name": "size",
+      "type": "select",
+      "label": "Size",
+      "default": "md",
+      "required": true,
+      "options": [
+        { "label": "Small", "value": "sm" },
+        { "label": "Medium", "value": "md" },
+        { "label": "Large", "value": "lg" }
+      ]
+    },
+    {
+      "name": "fullWidth",
+      "type": "boolean",
+      "label": "Full width",
+      "default": false,
+      "required": false
+    },
+    {
+      "name": "align",
+      "type": "select",
+      "label": "Content alignment",
+      "default": "left",
+      "required": true,
+      "options": [
+        { "label": "Left", "value": "left" },
+        { "label": "Center", "value": "center" }
+      ]
+    },
+    {
+  "name": "verticalAlign",
+  "type": "select",
+  "label": "Vertical alignment",
+  "default": "center",
+  "required": true,
+  "options": [
+    { "label": "Top", "value": "top" },
+    { "label": "Center", "value": "center" },
+    { "label": "Bottom", "value": "bottom" }
+  ]
+},
+    {
+      "name": "mobile",
+      "type": "object",
+      "label": "Mobile background",
+      "fields": [
+        {
+          "name": "background_image",
+          "type": "text",
+          "label": "Image URL",
+          "required": true
+        },
+        {
+          "name": "alt",
+          "type": "text",
+          "label": "Alt text",
+          "required": false,
+          "maxLength": 140,
+          "default": ""
+        },
+        {
+          "name": "overlay_color",
+          "type": "text",
+          "label": "Overlay color",
+          "required": true,
+          "default": "#000000"
+        },
+        {
+          "name": "overlay_opacity",
+          "type": "number",
+          "label": "Overlay opacity",
+          "required": true,
+          "default": 0.25
+        }
+      ]
+    },
+    {
+      "name": "desktop",
+      "type": "object",
+      "label": "Desktop background",
+      "fields": [
+        {
+          "name": "background_image",
+          "type": "text",
+          "label": "Image URL",
+          "required": true
+        },
+        {
+          "name": "alt",
+          "type": "text",
+          "label": "Alt text",
+          "required": false,
+          "maxLength": 140,
+          "default": ""
+        },
+        {
+          "name": "overlay_color",
+          "type": "text",
+          "label": "Overlay color",
+          "required": true,
+          "default": "#000000"
+        },
+        {
+          "name": "overlay_opacity",
+          "type": "number",
+          "label": "Overlay opacity",
+          "required": true,
+          "default": 0.25
+        }
+      ]
+    },
+    {
+      "name": "eyebrow",
+      "type": "text",
+      "label": "Eyebrow (optional)",
+      "default": "",
+      "required": false,
+      "maxLength": 60
+    },
+    {
+      "name": "header",
+      "type": "text",
+      "label": "Headline",
+      "default": "",
+      "required": true,
+      "maxLength": 80
+    },
+    {
+      "name": "subtext",
+      "type": "textarea",
+      "label": "Subtext",
+      "default": "",
+      "required": false,
+      "maxLength": 220
+    },
+    {
+      "name": "cta",
+      "type": "object",
+      "label": "Primary button",
+      "fields": [
+        {
+          "name": "label",
+          "type": "text",
+          "label": "Label",
+          "required": true,
+          "maxLength": 40
+        },
+        { "name": "href", "type": "text", "label": "Link", "required": true }
+      ]
+    },
+    {
+      "name": "secondaryCta",
+      "type": "object",
+      "label": "Secondary button (optional)",
+      "required": false,
+      "fields": [
+        {
+          "name": "label",
+          "type": "text",
+          "label": "Label",
+          "required": true,
+          "maxLength": 40
+        },
+        { "name": "href", "type": "text", "label": "Link", "required": true }
+      ]
+    }
+  ],
+  "a11y": { "landmark": "region", "label": "Hero section" },
+  "engines": { "siteRuntime": ">=1.0.0" },
+  "budgets": { "cssKB": 6 }
+}

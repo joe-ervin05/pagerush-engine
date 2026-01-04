@@ -1,0 +1,10 @@
+<div data-id="image" class="section section--image">
+  {{#if fields.title}}
+    <h2 class="h2">{{fields.title}}</h2>
+  {{/if}}
+  {{#if fields.imageUrl}}
+    <div class="image-container">
+      <img src="{{fields.imageUrl}}" alt="{{fields.altText}}" />
+    </div>
+  {{/if}}
+</div>

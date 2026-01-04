@@ -1,0 +1,107 @@
+{
+  "id": "logos",
+  "name": "Logos",
+  "version": "1.0.0",
+  "fields": [
+    {
+      "name": "title",
+      "type": "text",
+      "label": "Title",
+      "default": "Trusted by",
+      "required": false,
+      "maxLength": 80
+    },
+    {
+      "name": "subtitle",
+      "type": "textarea",
+      "label": "Subtitle",
+      "default": "",
+      "required": false,
+      "maxLength": 160
+    },
+    {
+      "name": "columnsMobile",
+      "type": "select",
+      "label": "Mobile columns",
+      "default": "2",
+      "required": true,
+      "options": [
+        { "label": "1", "value": "1" },
+        { "label": "2", "value": "2" }
+      ]
+    },
+    {
+      "name": "columnsDesktop",
+      "type": "select",
+      "label": "Desktop columns",
+      "default": "5",
+      "required": true,
+      "options": [
+        { "label": "2", "value": "2" },
+        { "label": "3", "value": "3" },
+        { "label": "4", "value": "4" },
+        { "label": "5", "value": "5" },
+        { "label": "6", "value": "6" }
+      ]
+    },
+    {
+      "name": "gap",
+      "type": "select",
+      "label": "Gap",
+      "default": "24",
+      "required": true,
+      "options": [
+        { "label": "Small", "value": "16" },
+        { "label": "Medium", "value": "24" },
+        { "label": "Large", "value": "32" }
+      ]
+    },
+    {
+      "name": "style",
+      "type": "select",
+      "label": "Style",
+      "default": "grayscale",
+      "required": true,
+      "options": [
+        { "label": "Grayscale", "value": "grayscale" },
+        { "label": "Full color", "value": "color" }
+      ]
+    },
+    {
+      "name": "enableHoverColor",
+      "type": "boolean",
+      "label": "Enable hover color",
+      "default": true,
+      "required": false
+    },
+    {
+      "name": "logos",
+      "label": "Logos",
+      "type": "array",
+      "fields": [
+        {
+          "name": "src",
+          "type": "text",
+          "label": "Logo URL",
+          "required": true
+        },
+        {
+          "name": "alt",
+          "type": "text",
+          "label": "Alt text",
+          "required": true,
+          "maxLength": 100
+        },
+        {
+          "name": "href",
+          "type": "text",
+          "label": "Link (optional)",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "a11y": { "landmark": "region", "label": "Logos section" },
+  "engines": { "siteRuntime": ">=1.0.0" },
+  "budgets": { "cssKB": 3 }
+}

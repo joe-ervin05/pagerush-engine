@@ -1,0 +1,78 @@
+<div
+  class="{% unless fields.fullWidth %}container mx-auto py-12{% endunless %}"
+  data-hero-root
+  data-hero-size="{{ fields.size }}"
+  data-hero-align="{{ fields.align }}"
+  data-hero-vertical="{{ fields.verticalAlign }}"
+  data-hero-full="{{ fields.fullWidth }}"
+>
+  <div
+    class="relative overflow-hidden border border-border bg-surface"
+    data-hero-shell
+    style="
+      --hero-overlay-color-mobile: {{ fields.mobile.overlay_color }};
+      --hero-overlay-opacity-mobile: {{ fields.mobile.overlay_opacity }};
+      --hero-overlay-color-desktop: {{ fields.desktop.overlay_color }};
+      --hero-overlay-opacity-desktop: {{ fields.desktop.overlay_opacity }};
+    "
+  >
+    <picture class="absolute inset-0" aria-hidden="true">
+      <source
+        media="(min-width: 768px)"
+        srcset="{{ fields.desktop.background_image }}"
+      >
+      <img
+        src="{{ fields.mobile.background_image }}"
+        alt="{{ fields.mobile.alt }}"
+        loading="eager"
+        decoding="async"
+        class="h-full w-full object-cover"
+      >
+    </picture>
+
+    <div class="absolute inset-0" data-hero-overlay></div>
+
+    <!-- Content -->
+    <div class="relative" data-hero-content>
+      <div class="container mx-auto" data-hero-container>
+        <div class="max-w-4xl" data-hero-inner>
+          {% if fields.eyebrow %}
+            <p class="text-sm font-medium text-white/90">{{ fields.eyebrow }}</p>
+          {% endif %}
+
+          <h1 class="mt-3 text-4xl font-semibold leading-tight text-white">
+            {{ fields.header }}
+          </h1>
+
+          {% if fields.subtext %}
+            <p
+              class="mt-4 max-w-2xl text-lg leading-7 text-white/90 whitespace-pre-line"
+            >
+              {{ fields.subtext }}
+            </p>
+          {% endif %}
+
+          {% if fields.cta and fields.cta.label %}
+            <div class="mt-7 flex flex-wrap gap-3" data-hero-ctas>
+              <a
+                href="{{ fields.cta.href }}"
+                class="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-base font-medium text-white"
+              >
+                {{ fields.cta.label }}
+              </a>
+
+              {% if fields.secondaryCta and fields.secondaryCta.label %}
+                <a
+                  href="{{ fields.secondaryCta.href }}"
+                  class="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 text-base font-medium text-white backdrop-blur"
+                >
+                  {{ fields.secondaryCta.label }}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.section {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--card-bg);
+}
+
+.section--text .h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section--image .image-container {
+  text-align: center;
+  margin-top: 1rem;
+}

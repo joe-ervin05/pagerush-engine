@@ -1,0 +1,49 @@
+/* Toggle */
+[data-reviews-root][data-layout="grid"] [data-reviews-grid] {
+  display: grid;
+}
+[data-reviews-root][data-layout="grid"] [data-reviews-carousel] {
+  display: none;
+}
+
+[data-reviews-root][data-layout="carousel"] [data-reviews-grid] {
+  display: none;
+}
+[data-reviews-root][data-layout="carousel"] [data-reviews-carousel] {
+  display: block;
+}
+
+/* Stars */
+[data-stars] {
+  letter-spacing: 0.12em;
+  opacity: 0.95;
+}
+
+/* Grid layout */
+[data-reviews-grid] {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  [data-reviews-grid] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  [data-reviews-root] [data-reviews-grid][data-cols="2"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  [data-reviews-root] [data-reviews-grid][data-cols="3"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Carousel track transition */
+[data-reviews-carousel] [data-track] {
+  transform: translateX(0);
+  transition: transform 320ms ease;
+  will-change: transform;
+}
